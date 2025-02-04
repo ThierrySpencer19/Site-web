@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartalogue</title>
+</head>
+<style>
+    body {
+    background-color: black;
+    margin: 0px;
+    padding: 0;
+    height: 100vh;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+header .logo img {
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    padding: 10px;
+    margin: 20px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 20px;
+    padding: 25px;
+}
+nav ul li {
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 0 15px;
+}
+nav ul li select{
+    border: none;
+    color: black;
+}
+nav ul li a {
+    color: #34495e;
+    text-decoration: none;
+    font-size: 16px;
+}
+nav ul li a:hover {
+    color: #d7cccc;
+}
+.nav-link {
+    font-size: small;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    color: #2a9d8f;
+    font-weight: bold;
+}
+.contact-button a:hover {
+    color: white;
+}
+nav ul li.contact-button {
+    margin-left: 130px;
+}
+nav ul li.contact-button a {
+    margin: 15px;
+    font-family: sans-serif;
+    padding: 15px 30px;
+    background-color: #2a9d8f;
+    cursor: pointer;
+    color: white;
+}
+nav ul li.contact-button a:hover {
+    background-color: rgb(5, 121, 119);
+}
+.img{
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+}
+.lero {
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+.lero h1 {
+    font-family: sans-serif;
+    font-size: 3rem;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.lero p {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+main {
+    padding: 50px;
+    background-color:  #f1f1f1;
+}
+
+h2 {
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: black;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.categories {
+    display: flex;
+    gap: 30px;
+}
+
+.category {
+    width: 200px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+}
+
+.category img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.category h3 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.view-all{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.view-all button {
+    padding: 10px 30px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.view-all button:hover {
+    background-color: #333;
+    color: white;
+}        
+.container {
+            padding: 20px;
+            background-color: #eaf4f4;
+        }
+
+        .header {
+            margin-bottom: 20px;
+            margin: 20px;
+        }
+
+        .header h1 {
+            font-family: sans-serif;
+            font-size: 2.5rem;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-family: sans-serif;
+            font-size: 1rem;
+            color: black;
+        }
+.grid {
+    width: 80%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+            margin: 0px;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px;
+            font-size: 1.25rem;
+            color: #2c3e50;
+        }
+
+        .card-content p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .view-products {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .view-products a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: #266e9e;;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .view-products a:hover {
+            text-decoration: none;
+            color: #3498db;
+        }
+hgroup {
+    padding: 50px;
+    background-color:  #f1f1f1;
+}
+
+h2 {
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: black;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.class {
+    display: flex;
+    gap: 30px;
+}
+
+.all-class {
+    width: 200px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.all-class:hover {
+    transform: translateY(-5px);
+}
+
+.all-class img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.all-class h3 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.view{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.view button {
+    padding: 10px 30px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.view button:hover {
+    background-color: #333;
+    color: white;
+}
+.partners-section {
+  text-align: center;
+  padding: 30px;
+}
+
+.partners-title {
+  font-size: 24px;
+  font-family: sans-serif;
+  font-weight: 0;
+  color: #1f2937; 
+  margin-bottom: 20px;
+}
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.partner-logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/360_F_511671292_A7C8X5vk9yMqdBjmLfb8tfELJIm7U57f-removebg-preview.png" alt="un logo">
+        </div>
+        <div class="img">
+            <img src="image/Auralee-defile-marque-brand-japonaise-comment-shabiller-quand-on-est-grand-conseil-mode-homme.jpeg" alt="">
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">ACCUIEL</a></li>
+                <li><a href="cartalogue.html" class="nav-link active">CARTALOGUE</a></li>
+                <li><a href="a propos.html" class="nav-link">À PROPOS</a></li>
+                <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+                <li class="contact-button"><a href="get in touch.html">Découvrir Plus</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="lero">
+            <h1>Catalogue Élégant</h1>
+            <p>Plongez dans notre collection raffinée et trouvez votre style parmi les marques <br> les plus prestigieuses.</p>
+        </div>
+        <main>
+            <h2>Mode Homme</h2>
+            <p>Découvrez des styles intemporels et modernes pour chaque occasion.</p>
+            <div class="categories">
+                <div class="category">
+                    <img src="image/1943370666.webp" alt="Costumes">
+                    <h3>Costumes</h3>
+                </div>
+                <div class="category">
+                    <img src="image/marque-chemise-homme-premiere-manche-comme-un-camion.webp" alt="Chemises">
+                    <h3>Chemises</h3>
+                </div>
+                <div class="category">
+                    <img src="image/mode-portrait-jeune-homme-affaires-beau-modele-homme-habille-elegant-costume-marron-accessoires_158538-11179.avif" alt="Accessoires">
+                    <h3>Accessoires</h3>
+                </div>
+            </div>
+            <div class="view-all">
+                <button>Voir tous les produits →</button>
+            </div>
+        </main>
+    </section>
+
+    <div class="container">
+        <div class="view-products">
+            <a href="#">Voir tous les produits &rarr;</a>
+        </div>
+        <div class="header">
+            <h1>Mode Femme</h1>
+            <p>Découvrez des styles intemporels et modernes pour chaque occasion.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <img src="image/7c7b1e74-71b6-483c-9be2-e5bf85487019.jpg" alt="Robes">
+                <div class="card-content">
+                    <h3>Robes</h3>
+                    <p>Élégance pour toutes les occasions</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="image/c69f9401-6ba3-4e18-9900-9a0bab165f01.jpg" alt="Tops">
+                <div class="card-content">
+                    <h3>Tops</h3>
+                    <p>Confort et style</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="image/jeune-femme-chaussures-lacets-cuir-mode-beige-elegant-collection-mode-chaussures-automne-pour-femmes-gros-plan-jambes-feminines-chaussures_173815-19635.avif" alt="Chaussures">
+                <div class="card-content">
+                    <h3>Chaussures</h3>
+                    <p>Marchez avec confiance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <hgroup>
+            <h2>Accessoires Tendance</h2>
+            <p>Ajoutez la touche finale parfaite à votre tenue.</p>
+            <div class="class">
+                <div class="all-class">
+                    <img src="image/1943370666.webp" alt="Costumes">
+                    <h3>Sacs</h3>
+                </div>
+                <div class="all-class">
+                    <img src="image/marque-chemise-homme-premiere-manche-comme-un-camion.webp" alt="Chemises">
+                    <h3>Bijoux</h3>
+                </div>
+                <div class="all-class">
+                    <img src="image/mode-portrait-jeune-homme-affaires-beau-modele-homme-habille-elegant-costume-marron-accessoires_158538-11179.avif" alt="Accessoires">
+                    <h3>Montres</h3>
+                </div>
+            </div>
+            <div class="view">
+                <button>Voir tous les produits →</button>
+            </div>
+            <section class="partners-section">
+                <h2 class="partners-title">Nos Marques Partenaires</h2>
+                <div class="partners-logos">
+                  <img src="image/images-removebg-preview.png" alt="Acme" class="partner-logo">
+                  <img src="image/aven.png" alt="Aven" class="partner-logo">
+                  <img src="image/logo.png" alt="Foxhub" class="partner-logo">
+                  <img src="image/png-clipart-logo-brand-under-armour-clothing-design-text-logo-thumbnail-removebg-preview.png" alt="Goldline" class="partner-logo">
+                  <img src="image/23869621-gucci-logo-marque-symbole-avec-nom-noir-conception-vetements-mode-vecteur-illustration-gratuit-vectoriel-removebg-preview.png" alt="Muzica" class="partner-logo">
+                </div>
+              </section>
+        </hgroup>
+    </section>
+</body>
+</html>
